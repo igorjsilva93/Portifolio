@@ -3,31 +3,253 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Meu Portfolio - Igor Silva</title>
-        <!-- Favicon-->
+        <title>Games - Meu Portfólio</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Simple line icons-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css" />
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 20px;
+            }
+            .gallery-item {
+                position: relative;
+                overflow: hidden;
+            }
+            .gallery-item img, .gallery-item iframe, .gallery-item video {
+            width: 100%;
+            display: block;
+        }
+            .gallery-item:hover img {
+                transform: scale(1.1);
+            }
+            .gallery-item .description {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                padding: 10px;
+                text-align: center;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+            .gallery-item:hover .description {
+                opacity: 1;
+            }
+         /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .modal img, .modal iframe {
+            width: 100%;
+            height: auto;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
     </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
-        <nav id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#page-top">Menu</a></li>
-                <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
-                <li class="sidebar-nav-item"><a href="#about">Programacao</a></li>
-                <li class="sidebar-nav-item"><a href="#services">Marketing</a></li>
-                <li class="sidebar-nav-item"><a href="#portfolio">Jogos</a></li>
-                <li class="sidebar-nav-item"><a href="#contact">Contacto</a></li>
+    <body>
+        <header class="masthead d-flex align-items-center">
+            <div class="container text-center">
+                <h1 class="mb-1">Meus Jogos</h1>
+                <h3 class="mb-5"><em>Projetos e Experimentos</em></h3>
+                <a class="btn btn-primary btn-xl" href="index.html">Voltar ao Portfólio</a>
+            </div>
+        </header>
+        <section class="content-section bg-light">
+            <div class="container">
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="assets/img/nds1.png" alt="NDS1">
+                        <div class="description">Este foi um dos meus primeiros jogos na plataforma BYOND (2008), antes de tudo, ja tive bastante jogos no RPG Maker 200, RPG Maker XP. Em meiados de 2008 no auge do anime Naruto criei um jogo chamado Naruto Shippuuden Dattebayo, carinhosamente chamado de NSD, este jogo era um MMORPG baseado no universo do Naruto.
+                            Neste jogo, com graficos 2D em pixel art, você podia criar seu personagem, escolher a vila e o clã, conforme ia evoluindo, ganhava os jutsus elementais, de clã e podia entrar para a Akatsuki, um clã de ninjas sem vila.
+                            Podia se tornar líder da sua Vila, ter outros ranks e patentes. Mas era simples.
+                            Este e um exemplo do codigo de escolha de elementos.
+
+                            Fiz este jogo sozinho.
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/nds1-2.png" alt="NDS1">
+                        <div class="description">Exemplo do Grafico do NDS1 com sistema de dia e noite</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/nds1-3.png" alt="NDS1">
+                        <div class="description">Um exemplo dos sprites que eu precisava montar para executar uma habilidade do clã hyuuga</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/nds2.png" alt="NSD2">
+                        <div class="description">Conforme fui evoluindo na programação, os codigo para o NSD2(2009) ficaram mais avançados, precisei refazer o jogo para ficar mais bonito visualmente e com codigo mais limpo com novas mecânicas
+                            Nesta epoca se juntou a equipe uma pessoa chamada Abner que viu meu esfoço e quis começar a me ajudar no pixel art.
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/nds2base.png" alt="NSD2">
+                        <div class="description">Um exemplo de como os graficos evoluiram do NSD1 para o NSD2</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/nds3kisame.png" alt="NSD3">
+                        <div class="description">Depois decidimos relançar o NSD para sua 3 versão(2010), novamente limpando e otimizando mais os codigos
+                            Os graficos com a ajuda do Abner melhoraram, os jutsus (habilidades) tambem melhoraram bastante.</div>
+                        </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/nds3mapa.png" alt="NSD3">
+                            <div class="description">Este era um exemplo do mapa que criamos, um mapa mundo 1000x1000
+                                Ele precisou ser divido em 2 partes para exemplificar as 5 vilas, conforme no anime.
+                                Nesta época se juntou a equipe um jogador que se chamada Yown, que ficou responsavel pelo
+                                Host 24/7 e o mapa.</div>
+                        </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/nds3pixelart.png" alt="NSD3">
+                            <div class="description">Um exemplo de como ficou o pixel art com a nova equipe</div>
+                        </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/nds3kisame.png" alt="NSD3">
+                            <div class="description">Depois decidimos relançar o NSD para sua 3 versão(2010), novamente limpando e otimizando mais os codigos
+                                Os graficos com a ajuda do Abner melhoraram, os jutsus (habilidades) tambem melhoraram bastante.</div>
+                        </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/nsdremake1.jpg" alt="NSD Remake">
+                            <div class="description">Apos muitos anos (2022) refiz o NSD sozinho com novas habilidade que tive em Photoshop, 
+                                        Programação e experiência em games.
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/nsdremake2.jpg" alt="NSD Remake">
+                            <div class="description">Aproveitei e melhorei o mapa, coloquei bastante sistema de sobrevivencia, sistema de guerra, Roleplay, segredos e muito mais.
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/nsdremake3.jpg" alt="NSD Remake">
+                        <div class="description">Porém manter o jogo ligado 24/7 estava muito difícil para mim e não consegui mantê-lo.</div>
+                    </div>
+                    <div class="gallery-item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/GnQd3h7cm2A" frameborder="0" allowfullscreen></iframe>
+                        <div class="description">Trailer do NSD Remake</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/inovegame.png" alt="Thor Inove">
+                        <div class="description">Em 2013 fiz um curso de jogos no Inove em Belo Horizonte, meu projeto final foi um jogo feito em Game Maker estilo Super Mario.</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/saintseiyaonline.png" alt="Saint Seiya Online">
+                        <div class="description">Em 2013 criei um MMORPG no BYOND inspirado em Cavaleiros do Zodíaco.</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/scrnshot2.png" alt="Saint Seiya Online">
+                        <div class="description">
+                            Primeiros testes da criação do SSO</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/scrnshot3.png" alt="Saint Seiya Online">
+                        <div class="description">Aproveitei que era sobre mitologia Nordica e criei o Kratos como evento,
+                            Neste evento ele se juntava para matar todos os jogadores, quem ganhasse o evento e conseguisse mata-lo, ganha um item raro.
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/saintseiyaonline.png" alt="Saint Seiya Online">
+                            <div class="description">Testando o Cerberus no Submundo</div>
+                        </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/Sso pvp.png" alt="Saint Seiya Online">
+                            <div class="description">Um Exemplo de como funcionava o PVP</div>
+                        </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/athena gostosa.png" alt="Saint Seiya Online">
+                            <div class="description">Salão de Athena</div>
+                        </div>
+                    <div class="gallery-item">
+                            <img src="assets/img/5 bronze.png" alt="Saint Seiya Online">
+                            <div class="description">Os Cavaleiros de Bronze (Todos jogadores)</div>
+                        </div>
+                        <div class="gallery-item">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/w0clJXaA31o" frameborder="0" allowfullscreen></iframe>
+                            <div class="description">Evento Saint Seiya Online</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-content" class="modal-content"></div>
+    </div>
+
+    <footer class="footer text-center">
+        <div class="container px-4 px-lg-5">
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="https://www.linkedin.com/in/igor-silva-b57169153/"><i class="icon-social-linkedin"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
+                </li>
             </ul>
-        </nav>
-        <h1>TESTE AAAA</h1>
+            <p class="text-muted small mb-0">Copyright &copy; Igor Silva 2023</p>
+        </div>
+    </footer>
+
+    <script>
+        // Função para abrir o modal
+        function openModal(src, isVideo = false) {
+            let modal = document.getElementById("modal");
+            let content = document.getElementById("modal-content");
+            
+            if (isVideo) {
+                content.innerHTML = `<iframe width="90%" height="90%" src="${src}" frameborder="0" allowfullscreen></iframe>`;
+            } else {
+                content.innerHTML = `<img src="${src}" alt="Imagem Ampliada">`;
+            }
+
+            modal.style.display = "flex";
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("modal-content").innerHTML = "";
+        }
+
+        // Adiciona eventos de clique a todas as imagens e vídeos
+        document.addEventListener("DOMContentLoaded", function() {
+            let galleryItems = document.querySelectorAll(".gallery-item img, .gallery-item iframe");
+
+            galleryItems.forEach(item => {
+                item.addEventListener("click", function(event) {
+                    event.stopPropagation(); // Evita que o modal feche ao clicar na mídia
+                    let src = this.src;
+                    let isVideo = this.tagName.toLowerCase() === "iframe";
+                    openModal(src, isVideo);
+                });
+            });
+        });
+    </script>
+    </body>
+</html>

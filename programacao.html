@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Marketing - Meu Portfólio</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet" type="text/css" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 20px;
+            }
+            .gallery-item {
+                position: relative;
+                overflow: hidden;
+            }
+            .gallery-item img, .gallery-item iframe, .gallery-item video {
+            width: 100%;
+            display: block;
+        }
+            .gallery-item:hover img {
+                transform: scale(1.1);
+            }
+            .gallery-item .description {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                padding: 10px;
+                text-align: center;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+            .gallery-item:hover .description {
+                opacity: 1;
+            }
+         /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .modal img, .modal iframe {
+            width: 100%;
+            height: auto;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+    </head>
+    <body>
+        <header class="masthead d-flex align-items-center">
+            <div class="container text-center">
+                <h1 class="mb-1">Programacao</h1>
+                <h3 class="mb-5"><em>Projetos em Diversas Linguagens</em></h3>
+                <a class="btn btn-primary btn-xl" href="index.html">Voltar ao Portfólio</a>
+            </div>
+        </header>
+        <section class="content-section bg-light">
+            <div class="container">
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="assets/img/codigo_progr.jpg" alt="Projeto Biblia">
+                        <div class="description">
+                            Projeto 1 - Jogo em Python para crianças.
+                            <br>
+                            <a href="https://github.com/igorjsilva93/circleofbible" target="_blank" class="btn btn-primary">Ver no GitHub</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/codigo_progr.jpg" alt="Projeto CyberpunkWorld">
+                        <div class="description">
+                            Projeto - CyberpunkWorld Site com Base de Dados e Loja
+                            <br>
+                            <a href="https://github.com/igorjsilva93/CyberpunkWorld" target="_blank" class="btn btn-primary">Ver no GitHub</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/codigo_progr.jpg" alt="Projeto ReunionAPP">
+                        <div class="description">
+                            Projeto - ReunionAPP uma app para reunioes escolares com marcacao no calendario dos utilizadores
+                            <br>
+                            <a href="https://github.com/igorjsilva93/ReunionAPP" target="_blank" class="btn btn-primary">Ver no GitHub</a>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img/codigo_progr.jpg" alt="Projeto Pong">
+                        <div class="description">
+                            Pong - Jogo de Pong feito em Java para apresentação de trabalho no TESP<br>
+                            <a href="https://github.com/igorjsilva93/pong" target="_blank" class="btn btn-primary">Ver no GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-content" class="modal-content"></div>
+    </div>
+
+    <footer class="footer text-center">
+        <div class="container px-4 px-lg-5">
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="https://www.linkedin.com/in/igor-silva-b57169153/"><i class="icon-social-linkedin"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
+                </li>
+            </ul>
+            <p class="text-muted small mb-0">Copyright &copy; Igor Silva 2023</p>
+        </div>
+    </footer>
+
+    <script>
+        // Função para abrir o modal
+        function openModal(src, isVideo = false) {
+            let modal = document.getElementById("modal");
+            let content = document.getElementById("modal-content");
+            
+            if (isVideo) {
+                content.innerHTML = `<iframe width="90%" height="90%" src="${src}" frameborder="0" allowfullscreen></iframe>`;
+            } else {
+                content.innerHTML = `<img src="${src}" alt="Imagem Ampliada">`;
+            }
+
+            modal.style.display = "flex";
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("modal-content").innerHTML = "";
+        }
+
+        // Adiciona eventos de clique a todas as imagens e vídeos
+        document.addEventListener("DOMContentLoaded", function() {
+            let galleryItems = document.querySelectorAll(".gallery-item img, .gallery-item iframe");
+
+            galleryItems.forEach(item => {
+                item.addEventListener("click", function(event) {
+                    event.stopPropagation(); // Evita que o modal feche ao clicar na mídia
+                    let src = this.src;
+                    let isVideo = this.tagName.toLowerCase() === "iframe";
+                    openModal(src, isVideo);
+                });
+            });
+        });
+    </script>
+    </body>
+</html>
