@@ -10841,8 +10841,9 @@ html {
   font-size: 3rem;
 }
 .content-section-heading h3, .content-section-heading .h3 {
-  font-size: 1rem;
   text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .text-faded {
@@ -10965,6 +10966,7 @@ html {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 .callout h2, .callout .h2 {
   font-size: 3.5rem;
@@ -11109,4 +11111,10 @@ footer.footer .social-link:hover {
   line-height: 7.5rem;
   font-size: 2.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #2c3e50; /* Azul-marinho */
+  color: #ffffff; /* Texto branco */
+  padding: 20px 0;
 }
